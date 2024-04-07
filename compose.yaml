@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=logistica'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=Administrador01#'
+    ports:
+      - '5432'
