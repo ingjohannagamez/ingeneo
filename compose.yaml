@@ -3,7 +3,7 @@ services:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=logistica'
-      - 'POSTGRES_PASSWORD=postgres'
-      - 'POSTGRES_USER=Administrador01#'
+      - 'POSTGRES_PASSWORD=Administrador01#'
+      - 'POSTGRES_USER=postgres'
     ports:
-      - '5432'
+      - '61880:5432'
