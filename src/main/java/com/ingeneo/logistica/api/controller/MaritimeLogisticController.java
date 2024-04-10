@@ -8,10 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
+import com.ingeneo.logistica.api.dto.MaritimeLogisticDTO;
 import com.ingeneo.logistica.core.CalculateShippingPrice;
-import com.ingeneo.logistica.service.TruckLogisticService;
-
+import com.ingeneo.logistica.service.MaritimeLogisticService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,41 +23,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/truckLogistics")
-@Tag(name = "TruckLogistics", description = "API para la gestión de logística de camiones")
-public class TruckLogisticController {
+@RequestMapping("/api/maritimeLogistic")
+@Tag(name = "MaritimeLogistic", description = "API para la gestión de logística de envios Maritimos")
+public class MaritimeLogisticController {
 
-    private final TruckLogisticService service;
+    private final MaritimeLogisticService service;
 
-    public TruckLogisticController(TruckLogisticService service) {
+    public MaritimeLogisticController(MaritimeLogisticService service) {
         this.service = service;
     }
     
     @GetMapping
-    @Operation(summary = "Lista todas las logísticas de camiones",
+    @Operation(summary = "Lista todas las logísticas de envios Maritimos",
                responses = {
                    @ApiResponse(responseCode = "200", description = "Operación exitosa", 
                                 content = @Content(mediaType = "application/json", 
-                                array = @ArraySchema(schema = @Schema(implementation = TruckLogisticDTO.class))))
+                                array = @ArraySchema(schema = @Schema(implementation = MaritimeLogisticDTO.class))))
                })
-    public ResponseEntity<List<TruckLogisticDTO>> getAllTruckLogistics() {
-        List<TruckLogisticDTO> list = service.findAll();
+    public ResponseEntity<List<MaritimeLogisticDTO>> getAllMaritimeLogistic() {
+        List<MaritimeLogisticDTO> list = service.findAll();
         return ResponseEntity.ok(list);
     }
 
     @PostMapping("/save")
-    @Operation(summary = "Crea una nueva logística de camión", 
-               description = "Guarda un nuevo registro de logística de camión. Valida que el precio de envío sea adecuado para productos electrónicos.",
+    @Operation(summary = "Crea una nueva logística de envios Maritimos", 
+               description = "Guarda un nuevo registro de logística de envios Maritimos. Valida que el precio de envío sea adecuado para productos electrónicos.",
                responses = {
-                    @ApiResponse(responseCode = "201", description = "Logística de camión creada exitosamente", 
-                                 content = @Content(schema = @Schema(implementation = TruckLogisticDTO.class))),
+                    @ApiResponse(responseCode = "201", description = "Logística de envios Maritimos creada exitosamente", 
+                                 content = @Content(schema = @Schema(implementation = MaritimeLogisticDTO.class))),
                     @ApiResponse(responseCode = "422", description = "Precio de envío fuera del rango permitido para productos electrónicos")
                })
-    public ResponseEntity<TruckLogisticDTO> createTruckLogistic(@Valid @RequestBody TruckLogisticDTO truckLogistic) {
-        if (!CalculateShippingPrice.isValidShippingPriceForElectronics(truckLogistic)) {
+    public ResponseEntity<MaritimeLogisticDTO> createTMaritimeLogistic(@Valid @RequestBody MaritimeLogisticDTO maritimeLogistic) {
+        if (!CalculateShippingPrice.isValidShippingPriceForElectronics(maritimeLogistic)) {
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "El precio de envío para productos electrónicos debe estar entre $2000.0 y $5000.0.");
         }
-    	TruckLogisticDTO savedTruckLogistic = service.save(truckLogistic);
+    	MaritimeLogisticDTO savedTruckLogistic = service.save(maritimeLogistic);
         return new ResponseEntity<>(savedTruckLogistic, HttpStatus.CREATED);
     }
 
@@ -66,11 +65,11 @@ public class TruckLogisticController {
     @Operation(summary = "Obtiene una logística de camión por su ID",
                responses = {
                    @ApiResponse(responseCode = "200", description = "Logística de camión encontrada", 
-                                content = @Content(schema = @Schema(implementation = TruckLogisticDTO.class))),
+                                content = @Content(schema = @Schema(implementation = MaritimeLogisticDTO.class))),
                    @ApiResponse(responseCode = "404", description = "Logística de camión no encontrada")
                })
-    public ResponseEntity<TruckLogisticDTO> getTruckLogisticById(@PathVariable Long id) {
-        Optional<TruckLogisticDTO> truckLogistic = service.findById(id);
+    public ResponseEntity<MaritimeLogisticDTO> getMaritimeLogisticById(@PathVariable Long id) {
+        Optional<MaritimeLogisticDTO> truckLogistic = service.findById(id);
 
         return truckLogistic
                 .map(ResponseEntity::ok)
@@ -81,13 +80,13 @@ public class TruckLogisticController {
     @Operation(summary = "Actualiza una logística de camión",
                responses = {
                    @ApiResponse(responseCode = "200", description = "Logística de camión actualizada exitosamente", 
-                                content = @Content(schema = @Schema(implementation = TruckLogisticDTO.class))),
+                                content = @Content(schema = @Schema(implementation = MaritimeLogisticDTO.class))),
                    @ApiResponse(responseCode = "404", description = "Logística de camión no encontrada")
                })
-    public ResponseEntity<TruckLogisticDTO> updateTruckLogistic(@PathVariable Long id, @Valid @RequestBody TruckLogisticDTO truckLogisticDTO) {
-    	truckLogisticDTO.setId(id);
-        TruckLogisticDTO updatedTruckLogistic = service.update(id, truckLogisticDTO);
-        return ResponseEntity.ok(updatedTruckLogistic);
+    public ResponseEntity<MaritimeLogisticDTO> updateMaritimeLogistic(@PathVariable Long id, @Valid @RequestBody MaritimeLogisticDTO maritimeLogisticDTO) {
+    	maritimeLogisticDTO.setId(id);
+        MaritimeLogisticDTO updatedMaritimeLogistic = service.update(id, maritimeLogisticDTO);
+        return ResponseEntity.ok(updatedMaritimeLogistic);
     }
     
     @DeleteMapping("/{id}")
@@ -96,7 +95,7 @@ public class TruckLogisticController {
                    @ApiResponse(responseCode = "204", description = "Logística de camión eliminada exitosamente"),
                    @ApiResponse(responseCode = "404", description = "Logística de camión no encontrada")
                })
-    public ResponseEntity<Void> deleteTruckLogistic(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteMaritimeLogistic(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

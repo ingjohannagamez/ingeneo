@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -23,16 +23,19 @@ public class MaritimeLogistic {
     private Integer quantity;
 
     @Schema(description = "Fecha de registro del envío", example = "2023-05-01")
-    private LocalDate registrationDate;
+    private Date registrationDate;
 
     @Schema(description = "Fecha estimada de entrega", example = "2023-05-15")
-    private LocalDate deliveryDate;
+    private Date deliveryDate;
 
     @Schema(description = "Puerto de entrega", example = "Puerto de Cartagena")
     private String deliveryPort;
 
     @Schema(description = "Precio de envío", example = "3000.00")
     private Double shippingPrice;
+    
+    @Schema(description = "Descuento de precio concedido", example = "1500.00")
+    private Double shippingPriceGranted;
 
     @Schema(description = "Número de la flota", example = "ABC1234D")
     private String fleetNumber;
