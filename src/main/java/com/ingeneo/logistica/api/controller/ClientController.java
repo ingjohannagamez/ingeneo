@@ -1,8 +1,6 @@
 package com.ingeneo.logistica.api.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.server.ResponseStatusException;
 
 import jakarta.validation.Valid;
 
@@ -64,11 +63,9 @@ public class ClientController {
                    @ApiResponse(responseCode = "404", description = "Logística de Cliente no encontrada")
                })
     public ResponseEntity<ClientDTO> getClientById(@PathVariable Long id) {
-        Optional<ClientDTO> client = service.findById(id);
-
-        return client
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    	ClientDTO client = service.findById(id)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		return ResponseEntity.ok(client);
     }
     
     @PutMapping("/{id}")

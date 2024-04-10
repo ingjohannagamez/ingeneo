@@ -1,8 +1,6 @@
 package com.ingeneo.logistica.api.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -69,11 +67,9 @@ public class MaritimeLogisticController {
                    @ApiResponse(responseCode = "404", description = "Logística de camión no encontrada")
                })
     public ResponseEntity<MaritimeLogisticDTO> getMaritimeLogisticById(@PathVariable Long id) {
-        Optional<MaritimeLogisticDTO> truckLogistic = service.findById(id);
-
-        return truckLogistic
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    	MaritimeLogisticDTO maritimeLogistic = service.findById(id)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		return ResponseEntity.ok(maritimeLogistic);
     }
     
     @PutMapping("/{id}")
