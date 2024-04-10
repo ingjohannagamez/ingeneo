@@ -25,6 +25,11 @@ public class GlobalExceptionHandler {
         body.put("error", ex.getStatusCode());
         body.put("message", ex.getReason());
         body.put("path", request.getDescription(false));
+        
+        // Check if the exception is a 404 Not Found
+        if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
+            body.put("message", "El recurso solicitado no se encuentra.");
+        }
 
         return new ResponseEntity<>(body, ex.getStatusCode());
     }
