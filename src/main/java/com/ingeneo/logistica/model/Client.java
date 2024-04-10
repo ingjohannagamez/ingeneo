@@ -4,8 +4,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -20,9 +18,4 @@ public class Client {
     @Schema(description = "Nombre del cliente", example = "ACME Inc.")
     private String name;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<TruckLogistic> truckLogistics = new HashSet<>();
-
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<MaritimeLogistic> maritimeLogistics = new HashSet<>();
 }

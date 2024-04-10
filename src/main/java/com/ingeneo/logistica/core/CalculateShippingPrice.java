@@ -1,5 +1,6 @@
 package com.ingeneo.logistica.core;
 
+import com.ingeneo.logistica.api.dto.MaritimeLogisticDTO;
 import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
 import com.ingeneo.logistica.model.MaritimeLogistic;
 import com.ingeneo.logistica.model.TruckLogistic;
@@ -17,8 +18,18 @@ public class CalculateShippingPrice {
     }
     
     public static boolean isValidShippingPriceForElectronics(TruckLogisticDTO truckLogisticDTO) {
-        double shippingPrice = truckLogisticDTO.getShippingPrice();
-        return "Electrónicos".equals(truckLogisticDTO.getProductType()) && (shippingPrice >= 2000.0 && shippingPrice <= 5000.0);
+        Double shippingPrice = truckLogisticDTO.getShippingPrice();
+        return "Electrónicos".equals(truckLogisticDTO.getProductType()) && 
+               shippingPrice != null && 
+               (shippingPrice >= 2000.0 && shippingPrice <= 5000.0);
     }
+
+    public static boolean isValidShippingPriceForElectronics(MaritimeLogisticDTO maritimeLogisticDTO) {
+        Double shippingPrice = maritimeLogisticDTO.getShippingPrice();
+        return "Electrónicos".equals(maritimeLogisticDTO.getProductType()) && 
+               shippingPrice != null && 
+               (shippingPrice >= 2000.0 && shippingPrice <= 5000.0);
+    }
+
     
 }

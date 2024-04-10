@@ -6,7 +6,7 @@ import lombok.Setter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -25,10 +25,10 @@ public class TruckLogistic {
     private Integer quantity;
 
     @Schema(description = "Fecha de registro del envío", example = "2023-04-05")
-    private LocalDate registrationDate;
+    private Date registrationDate;
 
     @Schema(description = "Fecha estimada de entrega", example = "2023-04-10")
-    private LocalDate deliveryDate;
+    private Date deliveryDate;
 
     @Schema(description = "Bodega de entrega", example = "Bodega Central")
     private String deliveryWarehouse;

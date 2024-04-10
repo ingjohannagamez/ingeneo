@@ -1,6 +1,8 @@
 package com.ingeneo.logistica.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -19,7 +21,13 @@ public class TruckLogisticService {
 
     public TruckLogisticService(TruckLogisticRepository repository) {
         this.repository = repository;
-    }    
+    }   
+    
+    public List<TruckLogisticDTO> findAll() {
+        return repository.findAll().stream()
+                         .map(TruckLogisticMapper::toDTO)
+                         .collect(Collectors.toList());
+    }
 
     public Optional<TruckLogisticDTO> findById(Long id) {
         Optional<TruckLogistic> truckLogistic = repository.findById(id);

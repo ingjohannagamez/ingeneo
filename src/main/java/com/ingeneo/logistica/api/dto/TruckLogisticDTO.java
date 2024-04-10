@@ -1,6 +1,8 @@
 package com.ingeneo.logistica.api.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
@@ -13,8 +15,10 @@ public class TruckLogisticDTO {
 	private Long id;
     private String productType;
     private Integer quantity;
-    private LocalDate registrationDate;
-    private LocalDate deliveryDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date registrationDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date deliveryDate;
     private String deliveryWarehouse;
     private Double shippingPrice;
     private Double shippingPriceGranted;
