@@ -65,6 +65,7 @@ public class MaritimeLogisticControllerTest {
         MaritimeLogisticDTO dto = new MaritimeLogisticDTO();
         dto.setProductType("Electrónicos");
         dto.setShippingPrice(3000.0);
+        dto.setFleetNumber("ABC1234D");;
 
         when(service.save(any(MaritimeLogisticDTO.class))).thenReturn(dto);
 
