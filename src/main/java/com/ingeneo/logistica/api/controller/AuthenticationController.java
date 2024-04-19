@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.ingeneo.logistica.api.dto.AuthenticationResponse;
 import com.ingeneo.logistica.api.dto.LoginDTO;
 import com.ingeneo.logistica.security.JwtTokenProvider;
 
@@ -39,16 +40,16 @@ public class AuthenticationController {
                responses = {
                    @ApiResponse(responseCode = "200", description = "Autenticación exitosa",
                                 content = @Content(mediaType = "application/json", 
-                                schema = @Schema(example = "{\"token\": \"your.jwt.token.here\"}"))),
+                                schema = @Schema(implementation = AuthenticationResponse.class))),
                    @ApiResponse(responseCode = "401", description = "Autenticación fallida")
                })
-    public ResponseEntity<String> authenticate(@RequestBody LoginDTO loginDto) {
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody LoginDTO loginDto) {
         try {
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword())
             );
             String token = jwtTokenProvider.generateToken(authentication);
-            return ResponseEntity.ok("{\"token\": \"" + token + "\"}");
+            return ResponseEntity.ok(new AuthenticationResponse(token));
         } catch (AuthenticationException e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Las credenciales proporcionadas son incorrectas");
         }
