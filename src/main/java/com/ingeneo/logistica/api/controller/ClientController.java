@@ -6,7 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ingeneo.logistica.api.dto.ClientDTO;
 import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
-import com.ingeneo.logistica.service.ClientService;
+import com.ingeneo.logistica.service.interfaces.IClientService;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,9 +25,9 @@ import jakarta.validation.Valid;
 @Tag(name = "Client", description = "API para la gestión de logística de Clientes")
 public class ClientController {
 
-    private final ClientService service;
+    private final IClientService service;
 
-    public ClientController(ClientService service) {
+    public ClientController(IClientService service) {
         this.service = service;
     }
     

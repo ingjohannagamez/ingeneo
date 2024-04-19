@@ -1,4 +1,4 @@
-package com.ingeneo.logistica.service;
+package com.ingeneo.logistica.service.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 
 import com.ingeneo.logistica.model.User;
 import com.ingeneo.logistica.repository.UserRepository;
+import com.ingeneo.logistica.service.CustomUserDetails;
+import com.ingeneo.logistica.service.interfaces.IUserDetailsService;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements IUserDetailsService, UserDetailsService {
 
 	@Autowired
     private UserRepository userRepository;

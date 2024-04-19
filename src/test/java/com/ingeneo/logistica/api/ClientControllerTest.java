@@ -3,7 +3,8 @@ package com.ingeneo.logistica.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ingeneo.logistica.api.controller.ClientController;
 import com.ingeneo.logistica.api.dto.ClientDTO;
-import com.ingeneo.logistica.service.ClientService;
+import com.ingeneo.logistica.service.interfaces.IClientService;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
@@ -38,7 +39,7 @@ public class ClientControllerTest {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Mock
-    private ClientService service;
+    private IClientService service;
 
     @InjectMocks
     private ClientController controller;

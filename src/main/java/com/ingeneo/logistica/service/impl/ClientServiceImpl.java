@@ -1,4 +1,4 @@
-package com.ingeneo.logistica.service;
+package com.ingeneo.logistica.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,13 +12,14 @@ import com.ingeneo.logistica.api.dto.ClientDTO;
 import com.ingeneo.logistica.api.mapper.ClientMapper;
 import com.ingeneo.logistica.model.Client;
 import com.ingeneo.logistica.repository.ClientRepository;
+import com.ingeneo.logistica.service.interfaces.IClientService;
 
 @Service
-public class ClientService {
+public class ClientServiceImpl implements IClientService {
 
 	private final ClientRepository repository;
 
-    public ClientService(ClientRepository repository) {
+    public ClientServiceImpl(ClientRepository repository) {
         this.repository = repository;
     }   
     

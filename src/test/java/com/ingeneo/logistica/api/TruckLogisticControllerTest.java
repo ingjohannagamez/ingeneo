@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ingeneo.logistica.api.controller.TruckLogisticController;
 import com.ingeneo.logistica.api.dto.ClientDTO;
 import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
-import com.ingeneo.logistica.service.TruckLogisticService;
+import com.ingeneo.logistica.service.interfaces.ITruckLogisticService;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
@@ -42,7 +42,7 @@ public class TruckLogisticControllerTest {
 	private MockMvc mockMvc;
 
     @Mock
-    private TruckLogisticService service;
+    private ITruckLogisticService service;
 
     @InjectMocks
     private TruckLogisticController controller;

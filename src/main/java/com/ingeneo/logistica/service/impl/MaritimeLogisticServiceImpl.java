@@ -1,4 +1,4 @@
-package com.ingeneo.logistica.service;
+package com.ingeneo.logistica.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,16 +10,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.ingeneo.logistica.api.dto.MaritimeLogisticDTO;
 import com.ingeneo.logistica.api.mapper.MaritimeLogisticMapper;
-import com.ingeneo.logistica.core.CalculateShippingPrice;
+import com.ingeneo.logistica.core.util.CalculateShippingPrice;
 import com.ingeneo.logistica.model.MaritimeLogistic;
 import com.ingeneo.logistica.repository.MaritimeLogisticRepository;
+import com.ingeneo.logistica.service.interfaces.IMaritimeLogisticService;
 
 @Service
-public class MaritimeLogisticService {
+public class MaritimeLogisticServiceImpl implements IMaritimeLogisticService {
 
 	private final MaritimeLogisticRepository repository;
 
-    public MaritimeLogisticService(MaritimeLogisticRepository repository) {
+    public MaritimeLogisticServiceImpl(MaritimeLogisticRepository repository) {
         this.repository = repository;
     }   
     

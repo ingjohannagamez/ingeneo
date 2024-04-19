@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.ingeneo.logistica.api.dto.MaritimeLogisticDTO;
-import com.ingeneo.logistica.core.CalculateShippingPrice;
-import com.ingeneo.logistica.service.MaritimeLogisticService;
+import com.ingeneo.logistica.core.util.CalculateShippingPrice;
+import com.ingeneo.logistica.service.interfaces.IMaritimeLogisticService;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -25,9 +26,9 @@ import jakarta.validation.Valid;
 @Tag(name = "MaritimeLogistic", description = "API para la gestión de logística de envios Maritimos")
 public class MaritimeLogisticController {
 
-    private final MaritimeLogisticService service;
+    private final IMaritimeLogisticService service;
 
-    public MaritimeLogisticController(MaritimeLogisticService service) {
+    public MaritimeLogisticController(IMaritimeLogisticService service) {
         this.service = service;
     }
     

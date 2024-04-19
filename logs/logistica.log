@@ -1,0 +1,156 @@
+2024-04-19T15:12:53.508-05:00  INFO 29592 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Starting LogisticaApplication using Java 19.0.1 with PID 29592 (C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\target\classes started by pipo0 in C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo)
+2024-04-19T15:12:53.511-05:00  INFO 29592 --- [logistica] [main] c.i.logistica.LogisticaApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-19T15:12:53.594-05:00  INFO 29592 --- [logistica] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\compose.yaml'
+2024-04-19T15:12:57.431-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Network ingeneo_default  Creating
+2024-04-19T15:12:57.486-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Network ingeneo_default  Created
+2024-04-19T15:12:57.486-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Creating
+2024-04-19T15:12:57.620-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Created
+2024-04-19T15:12:57.641-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Starting
+2024-04-19T15:12:57.995-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Started
+2024-04-19T15:12:57.995-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Waiting
+2024-04-19T15:12:58.513-05:00  INFO 29592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Healthy
+2024-04-19T15:13:02.101-05:00  INFO 29592 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-19T15:13:02.201-05:00  INFO 29592 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2024-04-19T15:13:02.907-05:00  INFO 29592 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-19T15:13:02.922-05:00  INFO 29592 --- [logistica] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-19T15:13:02.923-05:00  INFO 29592 --- [logistica] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-19T15:13:03.035-05:00  INFO 29592 --- [logistica] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-19T15:13:03.036-05:00  INFO 29592 --- [logistica] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2063 ms
+2024-04-19T15:13:03.242-05:00  INFO 29592 --- [logistica] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-19T15:13:03.320-05:00  INFO 29592 --- [logistica] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-19T15:13:03.362-05:00  INFO 29592 --- [logistica] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-19T15:13:03.661-05:00  INFO 29592 --- [logistica] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-19T15:13:03.699-05:00  INFO 29592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-19T15:13:03.866-05:00  INFO 29592 --- [logistica] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ad40184
+2024-04-19T15:13:03.868-05:00  INFO 29592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-19T15:13:03.905-05:00  WARN 29592 --- [logistica] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-19T15:13:05.240-05:00  INFO 29592 --- [logistica] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-19T15:13:05.338-05:00  INFO 29592 --- [logistica] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T15:13:06.151-05:00  WARN 29592 --- [logistica] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-19T15:13:07.217-05:00  INFO 29592 --- [logistica] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1be15455, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ff4d61b, org.springframework.security.web.context.SecurityContextHolderFilter@415c5469, org.springframework.security.web.header.HeaderWriterFilter@53791a39, org.springframework.web.filter.CorsFilter@dfe2875, org.springframework.security.web.authentication.logout.LogoutFilter@5b084c4c, com.ingeneo.logistica.security.JwtAuthenticationFilter@402fcf14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19544627, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5da20b76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@517d68b8, org.springframework.security.web.access.ExceptionTranslationFilter@28f5a003, org.springframework.security.web.access.intercept.AuthorizationFilter@1da53092]
+2024-04-19T15:13:07.571-05:00  INFO 29592 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-19T15:13:07.585-05:00  INFO 29592 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Started LogisticaApplication in 14.583 seconds (process running for 16.034)
+2024-04-19T15:14:55.037-05:00  INFO 29592 --- [logistica] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-19T15:14:55.037-05:00  INFO 29592 --- [logistica] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-19T15:14:55.040-05:00  INFO 29592 --- [logistica] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-19T15:30:14.396-05:00  INFO 29592 --- [logistica] [RMI TCP Connection(27)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-19T15:30:14.426-05:00  INFO 29592 --- [logistica] [RMI TCP Connection(27)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T15:30:14.429-05:00  INFO 29592 --- [logistica] [RMI TCP Connection(27)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-19T15:30:14.433-05:00  INFO 29592 --- [logistica] [RMI TCP Connection(27)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-19T15:30:41.498-05:00  INFO 23592 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Starting LogisticaApplication using Java 19.0.1 with PID 23592 (C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\target\classes started by pipo0 in C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo)
+2024-04-19T15:30:41.501-05:00  INFO 23592 --- [logistica] [main] c.i.logistica.LogisticaApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-19T15:30:41.581-05:00  INFO 23592 --- [logistica] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\compose.yaml'
+2024-04-19T15:30:44.705-05:00  INFO 23592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Created
+2024-04-19T15:30:44.710-05:00  INFO 23592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Starting
+2024-04-19T15:30:44.910-05:00  INFO 23592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Started
+2024-04-19T15:30:44.910-05:00  INFO 23592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Waiting
+2024-04-19T15:30:45.427-05:00  INFO 23592 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Healthy
+2024-04-19T15:30:47.637-05:00  INFO 23592 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-19T15:30:47.725-05:00  INFO 23592 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2024-04-19T15:30:48.305-05:00  INFO 23592 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-19T15:30:48.317-05:00  INFO 23592 --- [logistica] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-19T15:30:48.317-05:00  INFO 23592 --- [logistica] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-19T15:30:48.397-05:00  INFO 23592 --- [logistica] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-19T15:30:48.398-05:00  INFO 23592 --- [logistica] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1706 ms
+2024-04-19T15:30:48.586-05:00  INFO 23592 --- [logistica] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-19T15:30:48.653-05:00  INFO 23592 --- [logistica] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-19T15:30:48.689-05:00  INFO 23592 --- [logistica] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-19T15:30:48.940-05:00  INFO 23592 --- [logistica] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-19T15:30:48.967-05:00  INFO 23592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-19T15:30:49.126-05:00  INFO 23592 --- [logistica] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4882b9a
+2024-04-19T15:30:49.128-05:00  INFO 23592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-19T15:30:49.160-05:00  WARN 23592 --- [logistica] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-19T15:30:50.302-05:00  INFO 23592 --- [logistica] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-19T15:30:50.411-05:00  INFO 23592 --- [logistica] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T15:30:51.157-05:00  WARN 23592 --- [logistica] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-19T15:30:51.361-05:00  WARN 23592 --- [logistica] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetails' defined in file [C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\target\classes\com\ingeneo\logistica\service\CustomUserDetails.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.ingeneo.logistica.model.User' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-04-19T15:30:51.362-05:00  INFO 23592 --- [logistica] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T15:30:51.365-05:00  INFO 23592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-19T15:30:51.369-05:00  INFO 23592 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-19T15:30:51.371-05:00  INFO 23592 --- [logistica] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-04-19T15:30:51.392-05:00  INFO 23592 --- [logistica] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-19T15:30:51.420-05:00 ERROR 23592 --- [logistica] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.ingeneo.logistica.service.CustomUserDetails required a bean of type 'com.ingeneo.logistica.model.User' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.ingeneo.logistica.model.User' in your configuration.
+
+2024-04-19T15:31:23.049-05:00  INFO 1208 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Starting LogisticaApplication using Java 19.0.1 with PID 1208 (C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\target\classes started by pipo0 in C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo)
+2024-04-19T15:31:23.052-05:00  INFO 1208 --- [logistica] [main] c.i.logistica.LogisticaApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-19T15:31:23.127-05:00  INFO 1208 --- [logistica] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\compose.yaml'
+2024-04-19T15:31:26.511-05:00  INFO 1208 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Created
+2024-04-19T15:31:26.518-05:00  INFO 1208 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Starting
+2024-04-19T15:31:26.775-05:00  INFO 1208 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Started
+2024-04-19T15:31:26.776-05:00  INFO 1208 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Waiting
+2024-04-19T15:31:27.296-05:00  INFO 1208 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Healthy
+2024-04-19T15:31:29.414-05:00  INFO 1208 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-19T15:31:29.484-05:00  INFO 1208 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 5 JPA repository interfaces.
+2024-04-19T15:31:30.044-05:00  INFO 1208 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-19T15:31:30.056-05:00  INFO 1208 --- [logistica] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-19T15:31:30.056-05:00  INFO 1208 --- [logistica] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-19T15:31:30.140-05:00  INFO 1208 --- [logistica] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-19T15:31:30.141-05:00  INFO 1208 --- [logistica] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1494 ms
+2024-04-19T15:31:30.304-05:00  INFO 1208 --- [logistica] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-19T15:31:30.364-05:00  INFO 1208 --- [logistica] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-19T15:31:30.398-05:00  INFO 1208 --- [logistica] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-19T15:31:30.693-05:00  INFO 1208 --- [logistica] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-19T15:31:30.734-05:00  INFO 1208 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-19T15:31:30.941-05:00  INFO 1208 --- [logistica] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4407b042
+2024-04-19T15:31:30.944-05:00  INFO 1208 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-19T15:31:30.993-05:00  WARN 1208 --- [logistica] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-19T15:31:32.420-05:00  INFO 1208 --- [logistica] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-19T15:31:32.525-05:00  INFO 1208 --- [logistica] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T15:31:33.138-05:00  WARN 1208 --- [logistica] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-19T15:31:34.180-05:00  INFO 1208 --- [logistica] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79177bc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3fe33c59, org.springframework.security.web.context.SecurityContextHolderFilter@6e1a8e78, org.springframework.security.web.header.HeaderWriterFilter@461e479c, org.springframework.web.filter.CorsFilter@4a5cddd9, org.springframework.security.web.authentication.logout.LogoutFilter@3a917e07, com.ingeneo.logistica.security.JwtAuthenticationFilter@34e700f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18d963be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d2697a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38c7ad43, org.springframework.security.web.access.ExceptionTranslationFilter@14941b06, org.springframework.security.web.access.intercept.AuthorizationFilter@dc6a186]
+2024-04-19T15:31:34.510-05:00  INFO 1208 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-19T15:31:34.521-05:00  INFO 1208 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Started LogisticaApplication in 11.913 seconds (process running for 13.171)
+2024-04-19T15:31:43.723-05:00  INFO 1208 --- [logistica] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-19T15:31:43.724-05:00  INFO 1208 --- [logistica] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-19T15:31:43.731-05:00  INFO 1208 --- [logistica] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-04-19T16:06:20.096-05:00  INFO 1208 --- [logistica] [RMI TCP Connection(43)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-04-19T16:06:20.135-05:00  INFO 1208 --- [logistica] [RMI TCP Connection(43)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T16:06:20.140-05:00  INFO 1208 --- [logistica] [RMI TCP Connection(43)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-19T16:06:20.147-05:00  INFO 1208 --- [logistica] [RMI TCP Connection(43)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-19T16:06:39.709-05:00  INFO 22432 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Starting LogisticaApplication using Java 19.0.1 with PID 22432 (C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\target\classes started by pipo0 in C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo)
+2024-04-19T16:06:39.712-05:00  INFO 22432 --- [logistica] [main] c.i.logistica.LogisticaApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-19T16:06:39.796-05:00  INFO 22432 --- [logistica] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\pipo0\OneDrive\Escritorio\ingeneo\ingeneo\compose.yaml'
+2024-04-19T16:06:42.880-05:00  INFO 22432 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Created
+2024-04-19T16:06:42.895-05:00  INFO 22432 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Starting
+2024-04-19T16:06:43.154-05:00  INFO 22432 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Started
+2024-04-19T16:06:43.155-05:00  INFO 22432 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Waiting
+2024-04-19T16:06:43.676-05:00  INFO 22432 --- [logistica] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container ingeneo-postgres-1  Healthy
+2024-04-19T16:06:46.236-05:00  INFO 22432 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-19T16:06:46.331-05:00  INFO 22432 --- [logistica] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2024-04-19T16:06:46.945-05:00  INFO 22432 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-19T16:06:46.960-05:00  INFO 22432 --- [logistica] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-19T16:06:46.960-05:00  INFO 22432 --- [logistica] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-19T16:06:47.042-05:00  INFO 22432 --- [logistica] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-19T16:06:47.042-05:00  INFO 22432 --- [logistica] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2020 ms
+2024-04-19T16:06:47.210-05:00  INFO 22432 --- [logistica] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-19T16:06:47.288-05:00  INFO 22432 --- [logistica] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-19T16:06:47.333-05:00  INFO 22432 --- [logistica] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-19T16:06:47.620-05:00  INFO 22432 --- [logistica] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-19T16:06:47.656-05:00  INFO 22432 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-19T16:06:47.869-05:00  INFO 22432 --- [logistica] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@645d4639
+2024-04-19T16:06:47.872-05:00  INFO 22432 --- [logistica] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-19T16:06:47.909-05:00  WARN 22432 --- [logistica] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-19T16:06:49.570-05:00  INFO 22432 --- [logistica] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-19T16:06:49.747-05:00  INFO 22432 --- [logistica] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-19T16:06:55.079-05:00  WARN 22432 --- [logistica] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-19T16:07:02.350-05:00  INFO 22432 --- [logistica] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64abb917, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5207747c, org.springframework.security.web.context.SecurityContextHolderFilter@6add8aac, org.springframework.security.web.header.HeaderWriterFilter@3d94b49d, org.springframework.web.filter.CorsFilter@68596992, org.springframework.security.web.authentication.logout.LogoutFilter@a55b4f9, com.ingeneo.logistica.security.JwtAuthenticationFilter@5f0c45ae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@300b839c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@352288bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66d62c59, org.springframework.security.web.access.ExceptionTranslationFilter@326320bb, org.springframework.security.web.access.intercept.AuthorizationFilter@2d036335]
+2024-04-19T16:07:02.856-05:00  INFO 22432 --- [logistica] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-19T16:07:02.878-05:00  INFO 22432 --- [logistica] [main] c.i.logistica.LogisticaApplication       : Started LogisticaApplication in 23.768 seconds (process running for 25.109)
+2024-04-19T16:07:17.513-05:00  INFO 22432 --- [logistica] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-19T16:07:17.514-05:00  INFO 22432 --- [logistica] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-19T16:07:17.516-05:00  INFO 22432 --- [logistica] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

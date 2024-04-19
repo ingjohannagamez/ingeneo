@@ -1,4 +1,4 @@
-package com.ingeneo.logistica.core;
+package com.ingeneo.logistica.core.util;
 
 import com.ingeneo.logistica.api.dto.MaritimeLogisticDTO;
 import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
@@ -30,6 +30,5 @@ public class CalculateShippingPrice {
                shippingPrice != null && 
                (shippingPrice >= 2000.0 && shippingPrice <= 5000.0);
     }
-
-    
+   
 }

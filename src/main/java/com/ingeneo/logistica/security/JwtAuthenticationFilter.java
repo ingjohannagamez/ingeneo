@@ -11,6 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ingeneo.logistica.api.dto.LoginDTO;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -33,7 +34,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {
             // Reading username and password from JSON body
-            LoginCredentials credentials = objectMapper.readValue(request.getInputStream(), LoginCredentials.class);
+            LoginDTO credentials = objectMapper.readValue(request.getInputStream(), LoginDTO.class);
             String username = credentials.getUsername();
             String password = credentials.getPassword();
 
@@ -73,27 +74,5 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             throw e;
         }
     }
-    
- // Helper class to represent login credentials
-    private static class LoginCredentials {
-        private String username;
-        private String password;
 
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-    }
-    
 }

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.ingeneo.logistica.api.dto.TruckLogisticDTO;
-import com.ingeneo.logistica.core.CalculateShippingPrice;
-import com.ingeneo.logistica.service.TruckLogisticService;
+import com.ingeneo.logistica.core.util.CalculateShippingPrice;
+import com.ingeneo.logistica.service.interfaces.ITruckLogisticService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -26,9 +26,9 @@ import jakarta.validation.Valid;
 @Tag(name = "TruckLogistics", description = "API para la gestión de logística de camiones")
 public class TruckLogisticController {
 
-    private final TruckLogisticService service;
+    private final ITruckLogisticService service;
 
-    public TruckLogisticController(TruckLogisticService service) {
+    public TruckLogisticController(ITruckLogisticService service) {
         this.service = service;
     }
     
