@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+logs/                 # Excluir todos los directorios 'logs' a nivel global
