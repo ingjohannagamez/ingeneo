@@ -16,7 +16,7 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtTokenProvider {
 
-	@Value("${app.jwt-secret}")
+    @Value("${app.jwt-secret}")
     private String jwtSecret;
 
     @Value("${app.jwt-expiration-milliseconds}")
@@ -34,20 +34,20 @@ public class JwtTokenProvider {
         Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
 
         return Jwts.builder()
-                .setSubject(Long.toString(userPrincipal.getId()))
+                .setSubject(userPrincipal.getUsername()) // Cambiado para usar el username como subject
                 .setIssuedAt(now)
                 .setExpiration(expiryDate)
                 .signWith(getSigningKey())
                 .compact();
     }
 
-    public Long getUserIdFromJWT(String token) {
+    public String getUsernameFromJWT(String token) {
         Jws<Claims> claims = Jwts.parserBuilder()
             .setSigningKey(getSigningKey())
             .build()
             .parseClaimsJws(token);
 
-        return Long.parseLong(claims.getBody().getSubject());
+        return claims.getBody().getSubject();
     }
 
     public boolean validateToken(String authToken) {

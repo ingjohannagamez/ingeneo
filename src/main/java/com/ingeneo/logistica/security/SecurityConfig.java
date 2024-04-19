@@ -23,13 +23,14 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig {
 
-	@Autowired
+    @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @Bean
+    @SuppressWarnings("removal")
+	@Bean
     public AuthenticationManager authManager(HttpSecurity http, BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailsService userDetailsService) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService)
@@ -38,7 +39,8 @@ public class SecurityConfig {
                 .build();
     }
     
-    @Bean
+    @SuppressWarnings("removal")
+	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder auth = http.getSharedObject(AuthenticationManagerBuilder.class);
         auth.userDetailsService(userDetailsService)
@@ -56,8 +58,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/**").authenticated()
                 .requestMatchers(HttpMethod.PUT, "/api/**").authenticated()
                 .requestMatchers(HttpMethod.DELETE, "/api/**").authenticated()
-                .anyRequest().permitAll())
-            .addFilterBefore(new JwtAuthenticationFilter(authManager, jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .anyRequest().authenticated())
+            .addFilter(new JwtAuthenticationFilter(authManager, jwtTokenProvider, userDetailsService))
+            .addFilterBefore(new JwtAuthorizationFilter(jwtTokenProvider, userDetailsService), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

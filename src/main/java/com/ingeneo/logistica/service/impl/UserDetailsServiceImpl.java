@@ -2,6 +2,7 @@ package com.ingeneo.logistica.service.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,24 +14,27 @@ import org.springframework.stereotype.Service;
 import com.ingeneo.logistica.model.User;
 import com.ingeneo.logistica.repository.UserRepository;
 import com.ingeneo.logistica.service.CustomUserDetails;
-import com.ingeneo.logistica.service.interfaces.IUserDetailsService;
 
 @Service
-public class UserDetailsServiceImpl implements IUserDetailsService, UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
-	@Autowired
+    @Autowired
     private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("Usuario no encontrado");
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+        if (!optionalUser.isPresent()) {
+            throw new UsernameNotFoundException("Usuario no encontrado con el username: " + username);
         }
+
+        User user = optionalUser.get();
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
         user.getRoles().forEach(role -> {
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
         });
+
         return new CustomUserDetails(user, authorities);
     }
 }
+
